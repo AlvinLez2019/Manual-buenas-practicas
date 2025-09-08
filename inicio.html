@@ -5,64 +5,308 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual de Buenas Prácticas</title>
     <link rel="icon" href="manual.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin: 30px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #e74c3c;
+        }
+
+        h3 {
+            color: #34495e;
+            font-size: 1.5rem;
+            margin: 25px 0 15px 0;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+            border-radius: 8px;
+            border-left: 5px solid #3498db;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .intro {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #28a745;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        ol {
+            margin: 20px 0;
+            padding-left: 0;
+        }
+
+        li {
+            margin: 15px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            list-style: none;
+            counter-increment: item;
+            position: relative;
+        }
+
+        li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        li::before {
+            content: counter(item);
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        ol {
+            counter-reset: item;
+            padding-left: 30px;
+        }
+
+        strong {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .index-section {
+            background: linear-gradient(135deg, #e8f4fd 0%, #d1ecf1 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 2px solid #bee5eb;
+        }
+
+        .index-section h3 {
+            background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+            color: white;
+            margin: 0 0 20px 0;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border-left: none;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .index-section ol {
+            margin: 0;
+        }
+
+        .index-section li {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-left: 4px solid #17a2b8;
+        }
+
+        .index-section li::before {
+            background: #17a2b8;
+        }
+
+        .detailed-section {
+            margin: 40px 0;
+        }
+
+        .detailed-section li {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            border-left: 4px solid #28a745;
+            margin: 20px 0;
+        }
+
+        .detailed-section li::before {
+            background: #28a745;
+        }
+
+        .detailed-section strong {
+            color: #28a745;
+            font-size: 1.2rem;
+        }
+
+        .detailed-section p {
+            margin-top: 10px;
+            padding-left: 20px;
+            border-left: 2px solid #e9ecef;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Manual de Buenas Practicas en el Desarrollo de Software</h1>
-    <H2>Introducción</H2>
-    <p>Este manual tiene como objetivo proporcionar una guía para el desarrollo de software de alta calidad y eficiencia. A través de este manual se busca que los desarrolladores puedan tener una referencia clara y concisa de las mejores prácticas a seguir en el desarrollo de software, con el fin de mejorar la calidad del software y la eficiencia del proceso de desarrollo.</p>
-    <H2>Contenido</H2>
-    
-    <h3>🔧 Prácticas técnicas</h3>
-    <ol>
-        <li><strong>Control de versiones (Git, SVN, etc.)</strong>
-        <li><strong>Pruebas automatizadas</strong>
-        <li><strong>Código limpio y legible</strong>
-        <li><strong>Integración y entrega continua (CI/CD)</strong>
-        <li><strong>Seguridad desde el diseño</strong>
-        </li>
-    </ol>
-    
-    <h3>👥 Prácticas organizativas</h3>
-    <ol>
-        <li><strong>Documentación clara</strong>
-        <li><strong>Revisión de código (Code Review)</strong>
-        <li><strong>Comunicación constante en el equipo</strong>
-        <li><strong>Gestión ágil de tareas (Scrum, Kanban, etc.)</strong>
-        <li><strong>Feedback temprano con el cliente/usuario</strong>
-        </li>
-        </ol>
+    <div class="container">
+        <div class="header">
+            <h1>Manual de Buenas Prácticas en el Desarrollo de Software</h1>
+        </div>
+        
+        <div class="content">
+            <h2>Introducción</h2>
+            <div class="intro">
+                <p>Este manual tiene como objetivo proporcionar una guía para el desarrollo de software de alta calidad y eficiencia. A través de este manual se busca que los desarrolladores puedan tener una referencia clara y concisa de las mejores prácticas a seguir en el desarrollo de software, con el fin de mejorar la calidad del software y la eficiencia del proceso de desarrollo.</p>
+            </div>
+            
+            <h2>Contenido</h2>
+            
+            <div class="index-section">
+                <h3>🔧 Prácticas técnicas</h3>
+                <ol>
+                    <li><strong>Control de versiones (Git, SVN, etc.)</strong></li>
+                    <li><strong>Pruebas automatizadas</strong></li>
+                    <li><strong>Código limpio y legible</strong></li>
+                    <li><strong>Integración y entrega continua (CI/CD)</strong></li>
+                    <li><strong>Seguridad desde el diseño</strong></li>
+                </ol>
+                
+                <h3>👥 Prácticas organizativas</h3>
+                <ol>
+                    <li><strong>Documentación clara</strong></li>
+                    <li><strong>Revisión de código (Code Review)</strong></li>
+                    <li><strong>Comunicación constante en el equipo</strong></li>
+                    <li><strong>Gestión ágil de tareas (Scrum, Kanban, etc.)</strong></li>
+                    <li><strong>Feedback temprano con el cliente/usuario</strong></li>
+                </ol>
+            </div>
 
+            <div class="detailed-section">
+                <h2>Buenas Prácticas Técnicas 🛠️</h2>    
+                <ol>
+                    <li><strong>Control de versiones (Git, SVN, etc.)</strong>
+                        <p>Es fundamental para llevar un registro histórico de los cambios en el código fuente. Permite a varios desarrolladores trabajar en paralelo sin sobrescribir el trabajo de otros. Además, facilita la creación de ramas para probar nuevas funcionalidades sin afectar la versión estable del software.</p>
+                    </li>
+                    <li><strong>Pruebas automatizadas</strong>
+                        <p>Incluir pruebas unitarias, de integración y funcionales desde las primeras etapas del desarrollo permite asegurar que el sistema funciona como se espera. Las pruebas automatizadas reducen el tiempo invertido en pruebas manuales, detectan errores de manera temprana y disminuyen costos en corrección de fallos.</p>
+                    </li>
+                    <li><strong>Código limpio y legible</strong>
+                        <p>Seguir estándares de estilo (por ejemplo, PEP8 en Python o convenciones de Java) garantiza que el código sea entendible por cualquier miembro del equipo. Esto incluye usar nombres descriptivos, comentarios claros, evitar duplicación de código y aplicar principios como <strong>DRY</strong> (Don't Repeat Yourself) y <strong>SOLID</strong> para lograr mayor mantenibilidad.</p>
+                    </li>
+                    <li><strong>Integración y entrega continua (CI/CD)</strong>
+                        <p>Automatizar el proceso de construcción, pruebas y despliegue del software asegura que los cambios lleguen al entorno de producción de manera rápida y confiable. Con CI/CD se reducen riesgos de errores humanos y se obtiene retroalimentación inmediata sobre la estabilidad del sistema.</p>
+                    </li>
+                    <li><strong>Seguridad desde el diseño</strong>
+                        <p>Implementar prácticas de seguridad desde la fase inicial (no como añadido al final) evita vulnerabilidades críticas. Ejemplos: sanitización de entradas para prevenir inyecciones, gestión de contraseñas cifradas, uso de HTTPS y control de permisos. Esta práctica reduce el riesgo de ciberataques y pérdidas de datos.</p>
+                    </li>
+                </ol>
 
-        <h2>Buenas Prácticas Tecnicas 🛠️</h2>    
-        <ol>
-        <li><strong>Control de versiones (Git, SVN, etc.)</strong>
-            <p>Es fundamental para llevar un registro histórico de los cambios en el código fuente. Permite a varios desarrolladores trabajar en paralelo sin sobrescribir el trabajo de otros. Además, facilita la creación de ramas para probar nuevas funcionalidades sin afectar la versión estable del software.</p>
-        <li><strong>Pruebas automatizadas</strong>
-            <p>Incluir pruebas unitarias, de integración y funcionales desde las primeras etapas del desarrollo permite asegurar que el sistema funciona como se espera. Las pruebas automatizadas reducen el tiempo invertido en pruebas manuales, detectan errores de manera temprana y disminuyen costos en corrección de fallos.</p>
-        <li><strong>Código limpio y legible</strong>
-            <p>Seguir estándares de estilo (por ejemplo, PEP8 en Python o convenciones de Java) garantiza que el código sea entendible por cualquier miembro del equipo. Esto incluye usar nombres descriptivos, comentarios claros, evitar duplicación de código y aplicar principios como <strong></strong>DRY</strong> (Don’t Repeat Yourself) y <strong>SOLID</strong> para lograr mayor mantenibilidad.</p>
-        <li><strong>Integración y entrega continua (CI/CD)</strong>
-            <p>Automatizar el proceso de construcción, pruebas y despliegue del software asegura que los cambios lleguen al entorno de producción de manera rápida y confiable. Con CI/CD se reducen riesgos de errores humanos y se obtiene retroalimentación inmediata sobre la estabilidad del sistema.</p>
-        <li><strong>Seguridad desde el diseño</strong>
-            <p>Implementar prácticas de seguridad desde la fase inicial (no como añadido al final) evita vulnerabilidades críticas. Ejemplos: sanitización de entradas para prevenir inyecciones, gestión de contraseñas cifradas, uso de HTTPS y control de permisos. Esta práctica reduce el riesgo de ciberataques y pérdidas de datos.</p>
-        </li>
-        </ol>
-
-    <h2>Buenas Prácticas Organizativas 🗒️</h2>
-    <ol>
-            <li><strong>Documentación clara</strong>
-                <p>No basta con tener buen código: la documentación técnica (APIs, diagramas de arquitectura, manuales de instalación) y la documentación de usuario permiten comprender, usar y mantener el sistema. Una buena documentación evita la dependencia excesiva de un solo miembro del equipo.</p>
-            <li><strong>Revisión de código (Code Review)</strong>
-                <p>Antes de integrar nuevas funcionalidades, otro desarrollador revisa el código para verificar su calidad, detectar posibles errores y sugerir mejoras. Este proceso fomenta la colaboración, eleva el estándar de calidad y ayuda a que el conocimiento se comparta entre todo el equipo.</p>
-            <li><strong>Comunicación constante en el equipo</strong>
-                <p>Mantener reuniones periódicas y canales de comunicación abiertos (por ejemplo, Slack, Teams, stand-ups diarios) ayuda a identificar bloqueos rápidamente y a coordinar esfuerzos. La comunicación fluida evita malentendidos y asegura que todos estén alineados con los objetivos del proyecto.</p>
-            <li><strong>Gestión ágil de tareas (Scrum, Kanban, etc.)</strong>
-                <p>Dividir el trabajo en tareas pequeñas y manejables mejora la organización y visibilidad del progreso. Métodos como Scrum (con sprints de 2–4 semanas) o Kanban (con tableros visuales) permiten priorizar lo más importante, adaptarse a cambios y mantener el proyecto bajo control.</p>
-            <li><strong>Feedback temprano con el cliente/usuario</strong>
-                <p>Involucrar al cliente o usuario final en el proceso de desarrollo (mediante prototipos, demos o entregas parciales) asegura que el producto cumpla realmente con sus expectativas. Esto evita retrabajo y asegura que el software tenga valor práctico desde sus primeras versiones.</p>
-            </li>
-        </ol>
-
+                <h2>Buenas Prácticas Organizativas 🗒️</h2>
+                <ol>
+                    <li><strong>Documentación clara</strong>
+                        <p>No basta con tener buen código: la documentación técnica (APIs, diagramas de arquitectura, manuales de instalación) y la documentación de usuario permiten comprender, usar y mantener el sistema. Una buena documentación evita la dependencia excesiva de un solo miembro del equipo.</p>
+                    </li>
+                    <li><strong>Revisión de código (Code Review)</strong>
+                        <p>Antes de integrar nuevas funcionalidades, otro desarrollador revisa el código para verificar su calidad, detectar posibles errores y sugerir mejoras. Este proceso fomenta la colaboración, eleva el estándar de calidad y ayuda a que el conocimiento se comparta entre todo el equipo.</p>
+                    </li>
+                    <li><strong>Comunicación constante en el equipo</strong>
+                        <p>Mantener reuniones periódicas y canales de comunicación abiertos (por ejemplo, Slack, Teams, stand-ups diarios) ayuda a identificar bloqueos rápidamente y a coordinar esfuerzos. La comunicación fluida evita malentendidos y asegura que todos estén alineados con los objetivos del proyecto.</p>
+                    </li>
+                    <li><strong>Gestión ágil de tareas (Scrum, Kanban, etc.)</strong>
+                        <p>Dividir el trabajo en tareas pequeñas y manejables mejora la organización y visibilidad del progreso. Métodos como Scrum (con sprints de 2–4 semanas) o Kanban (con tableros visuales) permiten priorizar lo más importante, adaptarse a cambios y mantener el proyecto bajo control.</p>
+                    </li>
+                    <li><strong>Feedback temprano con el cliente/usuario</strong>
+                        <p>Involucrar al cliente o usuario final en el proceso de desarrollo (mediante prototipos, demos o entregas parciales) asegura que el producto cumpla realmente con sus expectativas. Esto evita retrabajo y asegura que el software tenga valor práctico desde sus primeras versiones.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
 </body>
 <footer>
     <p>Todos los derechos reservados &copy; 2025</p>
