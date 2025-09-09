@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Buenas Prácticas</title>
+    <link rel="icon" href="manual.png" type="image/png">
+</head>
+<body>
+    <h1>Manual de Buenas Practicas en el Desarrollo de Software</h1>
+    <H2>Introducción</H2>
+    <p>Este manual tiene como objetivo proporcionar una guía para el desarrollo de software de alta calidad y eficiencia. A través de este manual se busca que los desarrolladores puedan tener una referencia clara y concisa de las mejores prácticas a seguir en el desarrollo de software, con el fin de mejorar la calidad del software y la eficiencia del proceso de desarrollo.</p>
+    <H2>Contenido</H2>
+    
+    <h3>Prácticas técnicas</h3>
+    <ol>
+        <li><strong>Control de versiones (Git, SVN, etc.)</strong></li>
+        <li><strong>Pruebas automatizadas</strong></li>
+        <li><strong>Código limpio y legible</strong></li>
+        <li><strong>Integración y entrega continua (CI/CD)</strong></li>
+        <li><strong>Seguridad desde el diseño</strong>
+        </li>
+    </ol>
+
+    <h3> Buenas Prácticas en el Código </h3>
+    <ol>
+        <li><strong>El código no solo debe funcionar</strong></li>
+        <li><strong>Escribir código claro y legible</strong></li>
+        <li><strong>Evitar duplicación</strong></li>
+        <li><strong>Documentación mínima pero útil</strong></li>
+        <li><strong>Manejo correcto de errores</strong></li>
+    </ol>
+    
+    <h3>Prácticas organizativas</h3>
+    <ol>
+        <li><strong>Documentación clara</strong></li>
+        <li><strong>Revisión de código (Code Review)</strong></li>
+        <li><strong>Comunicación constante en el equipo</strong></li>
+        <li><strong>Gestión ágil de tareas (Scrum, Kanban, etc.)</strong></li>
+        <li><strong>Feedback temprano con el cliente/usuario</strong>
+        </li>
+        </ol>
+
+
+        <h2>Buenas Prácticas Tecnicas</h2>    
+        <ol>
+        <li><strong>Control de versiones (Git, SVN, etc.)</strong></li>
+            <p>Es fundamental para llevar un registro histórico de los cambios en el código fuente. Permite a varios desarrolladores trabajar en paralelo sin sobrescribir el trabajo de otros. Además, facilita la creación de ramas para probar nuevas funcionalidades sin afectar la versión estable del software.</p>
+        <li><strong>Pruebas automatizadas</strong></li>
+            <p>Incluir pruebas unitarias, de integración y funcionales desde las primeras etapas del desarrollo permite asegurar que el sistema funciona como se espera. Las pruebas automatizadas reducen el tiempo invertido en pruebas manuales, detectan errores de manera temprana y disminuyen costos en corrección de fallos.</p>
+        <li><strong>Código limpio y legible</strong></li>
+            <p>Seguir estándares de estilo (por ejemplo, PEP8 en Python o convenciones de Java) garantiza que el código sea entendible por cualquier miembro del equipo. Esto incluye usar nombres descriptivos, comentarios claros, evitar duplicación de código y aplicar principios como <strong></strong>DRY</strong> (Don’t Repeat Yourself) y <strong>SOLID</strong> para lograr mayor mantenibilidad.</p>
+        <li><strong>Integración y entrega continua (CI/CD)</strong></li>
+            <p>Automatizar el proceso de construcción, pruebas y despliegue del software asegura que los cambios lleguen al entorno de producción de manera rápida y confiable. Con CI/CD se reducen riesgos de errores humanos y se obtiene retroalimentación inmediata sobre la estabilidad del sistema.</p>
+        <li><strong>Seguridad desde el diseño</strong></li>
+            <p>Implementar prácticas de seguridad desde la fase inicial (no como añadido al final) evita vulnerabilidades críticas. Ejemplos: sanitización de entradas para prevenir inyecciones, gestión de contraseñas cifradas, uso de HTTPS y control de permisos. Esta práctica reduce el riesgo de ciberataques y pérdidas de datos.</p>
+        </li>
+        </ol>
+
+    
+        <h2>Buenas Prácticas en el Código</h2>
+        <ol type="A">
+            <li><strong>El código no solo debe funcionar</strong>
+                <p>También debe ser fácil de leer, mantener y mejorar.</p>
+            </li>
+            <li><strong>Escribir código claro y legible</strong>
+                <p>Preferible nombres largos pero claros antes que cortos y confusos.</p>
+            </li>
+            <li><strong>Evitar duplicación</strong>
+                <p>Siguiendo el principio <em>Don’t Repeat Yourself</em>, esto reduce errores y facilita actualizaciones.</p>
+            </li>
+            <li><strong>Documentación mínima pero útil</strong>
+                <p>El código debería explicarse solo, pero se deberían agregar comentarios en lugares críticos o complejos.</p>
+            </li>
+            <li><strong>Manejo correcto de errores</strong>
+                <p>No ignorar errores, utilizar excepciones y mensajes claros mediante estructuras como <code>try-catch</code>.</p>
+            </li>
+        </ol>
+
+
+
+    <h2>Buenas Prácticas Organizativas</h2>
+    <ol>
+            <li><strong>Documentación clara</strong></li>
+                <p>No basta con tener buen código: la documentación técnica (APIs, diagramas de arquitectura, manuales de instalación) y la documentación de usuario permiten comprender, usar y mantener el sistema. Una buena documentación evita la dependencia excesiva de un solo miembro del equipo.</p>
+            <li><strong>Revisión de código (Code Review)</strong></li>
+                <p>Antes de integrar nuevas funcionalidades, otro desarrollador revisa el código para verificar su calidad, detectar posibles errores y sugerir mejoras. Este proceso fomenta la colaboración, eleva el estándar de calidad y ayuda a que el conocimiento se comparta entre todo el equipo.</p>
+            <li><strong>Comunicación constante en el equipo</strong></li>
+                <p>Mantener reuniones periódicas y canales de comunicación abiertos (por ejemplo, Slack, Teams, stand-ups diarios) ayuda a identificar bloqueos rápidamente y a coordinar esfuerzos. La comunicación fluida evita malentendidos y asegura que todos estén alineados con los objetivos del proyecto.</p>
+            <li><strong>Gestión ágil de tareas (Scrum, Kanban, etc.)</strong></li>
+                <p>Dividir el trabajo en tareas pequeñas y manejables mejora la organización y visibilidad del progreso. Métodos como Scrum (con sprints de 2–4 semanas) o Kanban (con tableros visuales) permiten priorizar lo más importante, adaptarse a cambios y mantener el proyecto bajo control.</p>
+            <li><strong>Feedback temprano con el cliente/usuario</strong>
+                <p>Involucrar al cliente o usuario final en el proceso de desarrollo (mediante prototipos, demos o entregas parciales) asegura que el producto cumpla realmente con sus expectativas. Esto evita retrabajo y asegura que el software tenga valor práctico desde sus primeras versiones.</p>
+            </li>
+        </ol>
+
+</body>
+<footer>
+    <p>Todos los derechos reservados &copy; 2025</p>
+</footer>
+</html>
