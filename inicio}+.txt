@@ -49,7 +49,7 @@
         <li><strong>Pruebas automatizadas</strong></li>
             <p>Incluir pruebas unitarias, de integración y funcionales desde las primeras etapas del desarrollo permite asegurar que el sistema funciona como se espera. Las pruebas automatizadas reducen el tiempo invertido en pruebas manuales, detectan errores de manera temprana y disminuyen costos en corrección de fallos.</p>
         <li><strong>Código limpio y legible</strong></li>
-            <p>Seguir estándares de estilo (por ejemplo, PEP8 en Python o convenciones de Java) garantiza que el código sea entendible por cualquier miembro del equipo. Esto incluye usar nombres descriptivos, comentarios claros, evitar duplicación de código y aplicar principios como <strong></strong>DRY</strong> (Don’t Repeat Yourself) y <strong>SOLID</strong> para lograr mayor mantenibilidad.</p>
+            <p>Seguir estándares de estilo (por ejemplo, PEP8 en Python o convenciones de Java) garantiza que el código sea entendible por cualquier miembro del equipo. Esto incluye usar nombres descriptivos, comentarios claros, evitar duplicación de código y aplicar principios como <strong>DRY</strong> (Don’t Repeat Yourself) y <strong>SOLID</strong> para lograr mayor mantenibilidad.</p>
         <li><strong>Integración y entrega continua (CI/CD)</strong></li>
             <p>Automatizar el proceso de construcción, pruebas y despliegue del software asegura que los cambios lleguen al entorno de producción de manera rápida y confiable. Con CI/CD se reducen riesgos de errores humanos y se obtiene retroalimentación inmediata sobre la estabilidad del sistema.</p>
         <li><strong>Seguridad desde el diseño</strong></li>
@@ -94,8 +94,8 @@
             </li>
         </ol>
 
+    <footer>
+        <p>Todos los derechos reservados &copy; 2025</p>
+    </footer>
 </body>
-<footer>
-    <p>Todos los derechos reservados &copy; 2025</p>
-</footer>
 </html>
